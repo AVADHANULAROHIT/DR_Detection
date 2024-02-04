@@ -1,0 +1,77 @@
+{%include "oheader.html" %}
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:  #ff6699;
+  color: white;
+}
+</style>
+	<script language="javascript" type="text/javascript">
+
+function popitup(url) {
+	newwindow=window.open(url,'name','height=350,width=400');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+</script>
+</head>
+   <div class="page-nav no-margin row">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-start">Model Evaluations</h2>
+                    <ul>
+                        <li> <a href="#"><i class="bi bi-house-door"></i> Home</a></li>
+                        <li><i class="bi bi-chevron-double-right pe-2"></i>DL Evaluations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+<div class="row contact-rooo big-padding no-margin">
+        <div class="container">
+           <div class="row">
+
+
+
+<table id="customers">
+  <tr>
+    <th>CNN Accuracy</th>
+	  <th>CNN_LSTM Accuracy</th>
+
+  </tr>
+{%  for data in rawdata %}
+	<tr><td><strong>{{data[1]}}</strong></td>
+        <td><strong>{{data[2]}}</strong></td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+          </div>
+        </div>
+      </div>
+
+<br><br><br><br><br><br>
+{%include "footer.html" %}
